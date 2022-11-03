@@ -19,7 +19,7 @@ def dms(filedata):
     # make sure deadline exists
     for task in taskdata:
         if not task[3]:
-            task[3]=task[2]
+            task[3] = task[2]
     taskdata.sort(key=sortbydeadline)
     taskdataBackup = copy.deepcopy(taskdata)
     # calculate the output for RMS here

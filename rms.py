@@ -5,7 +5,7 @@ from helpers import lcmofarray
 from helpers import getutil
 from helpers import sortbyperiod
 from formatOutput import format_output_as_gant
-
+from rta import rta
 
 def rms(filedata):
     print("\nRMS:")
@@ -22,8 +22,16 @@ def rms(filedata):
         print("==> RMS-Test bestanden!")
     # sort by period length
     taskdata = copy.deepcopy(filedata)
+    # make sure deadline exists
+    for task in taskdata:
+        if not task[3]:
+            task[3] = task[2]
     taskdata.sort(key=sortbyperiod)
     taskdataBackup = copy.deepcopy(taskdata)
+
+    # rta test
+    rta(taskdataBackup)
+
     # calculate the output for RMS here
     rmsoutput = []
     for t in tqdm(range(lcm), desc="RMS Scheduling", colour="#48dd40"):

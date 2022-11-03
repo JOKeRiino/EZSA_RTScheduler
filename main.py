@@ -22,6 +22,9 @@ def dms_from_file(path):
 if __name__ == '__main__':
     # file structure: Name, Comp Time (C), Period (T), Deadline (D)
     # rms_from_file("Assets/Tasks4.txt")
-     dms_from_file("Assets/Tasks4.txt")
+    # dms_from_file("Assets/Tasks4.txt")
     # rms_from_file("Assets/Tasks22.txt")
     # dms_from_file("Assets/Tasks4.txt")
+
+    #RTA
+    rms_from_file("Assets/TasksRTA.txt")
