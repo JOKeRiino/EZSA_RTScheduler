@@ -11,7 +11,7 @@ Current possible scheduling algorithms include:
 
 ## Preparation:
 
-Tasks need to be provided in a .txt file within the same directory
+Tasks need to be provided in a .txt file within the same directory.
 The file structure has to look like this:
 ```
 task_name, computation_time, period, deadline (optional)
@@ -27,8 +27,8 @@ D,2,10,9
 
 Within the main method, read the file data into a variable,
 then call one of the scheduling methods, currently:
-* rms(filedata) or
-* dms(filedata)
+* rms_from_file( /path ) or
+* dms_from_file( /path )
 
 ## Output:
 For the above example the output looks as follows:
