@@ -1,6 +1,6 @@
-# ESZA_RTScheduler
+# EZSA_RTScheduler
 
-A real-time scheduler for the M.Sc. CS subject EZSA (Realtime Systems in Automotive Computing)
+A real-time scheduler for the M.Sc. CS subject EZSA (Realtime Systems in Automotive Computing) at TH Nuremberg
 
 ## What it does:
 
