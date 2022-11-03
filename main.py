@@ -2,9 +2,10 @@
 # TODOS:
 #   DONE: Get Data into the program!
 #   DONE: Get basic cycle to work!
-#   TODO: Timing on remaining period time is wrong and messing up with two values!
+#   DONE: RMS & DMS Scheduling work!
 import math
 import copy
+from tqdm import tqdm
 
 def readfile(filename):
     # read data from file
@@ -71,7 +72,7 @@ def rms(filedata):
     taskdataBackup = copy.deepcopy(taskdata)
     # calculate the output for RMS here
     rmsoutput = []
-    for t in range(lcm):
+    for t in tqdm(range(lcm), desc="RMS Scheduling", colour="#48dd40"):
         # Go through sorted tasks and append them to execution!
         for task in taskdata:
             if task[1] != 0:
@@ -111,7 +112,7 @@ def dms(filedata):
     taskdataBackup = copy.deepcopy(taskdata)
     # calculate the output for RMS here
     dmsoutput = []
-    for t in range(lcm):
+    for t in tqdm(range(lcm), desc="DMS Scheduling", colour="#48dd40"):
         # Go through sorted tasks and append them to execution!
         for task in taskdata:
             if task[1] != 0:
@@ -137,9 +138,9 @@ def dms(filedata):
 if __name__ == '__main__':
     # file structure: Name, Comp Time (C), Period (T), Deadline (D)
     fileData4 = readfile("Assets/Tasks4.txt")
-    rms(fileData4)
-    dms(fileData4)
+    # rms(fileData4)
+    # dms(fileData4)
     fileData22 = readfile("Assets/Tasks22.txt")
-    # rms(fileData22)
+    rms(fileData22)
     # dms(fileData22)
 
