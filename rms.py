@@ -4,6 +4,7 @@ from tqdm import tqdm
 from helpers import lcmofarray
 from helpers import getutil
 from helpers import sortbyperiod
+from formatOutput import format_output_as_gant
 
 
 def rms(filedata):
@@ -45,4 +46,4 @@ def rms(filedata):
         if len(rmsoutput) < (t + 1):
             rmsoutput.append("i")
     print(rmsoutput)
-    print(taskdata)
+    format_output_as_gant(rmsoutput, filedata)

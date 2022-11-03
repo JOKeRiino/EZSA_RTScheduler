@@ -31,8 +31,9 @@ then call one of the scheduling methods, currently:
 * dms_from_file( /path )
 
 ## Output:
-For the above example the output looks as follows:
-
+For the above example the output looks as follows: \
+Hyperperiod, Utilisation, and the output array are displayed.
+Also a gant chart of the output is generated (Limited to 200 chars max.)
 ### RMS:
 ```
 Hyperperiode:  30
@@ -40,6 +41,13 @@ Prozessorauslastung:  0.8999999999999999 , Max:  0.7568284600108841
 ==> RMS-Test nicht bestanden!
 ['A', 'C', 'B', 'A', 'D', 'C', 'A', 'B', 'D', 'A', 'C', 'D', 'A', 'B', 
 'D', 'A', 'C', 'i', 'A', 'B', 'C', 'A', 'D', 'D', 'A', 'C', 'B', 'A', 'i', 'i']
+RMS Scheduling: 100%|██████████| 30/30 [00:00<00:00, 142825.33it/s]
+
+Gant Chart:
+A |█░░█░░█░░█░░█░░█░░█░░█░░█░░█░░
+B |░░█░░░░█░░░░░█░░░░░█░░░░░░█░░░
+C |░█░░░█░░░░█░░░░░█░░░█░░░░█░░░░
+D |░░░░█░░░█░░█░░█░░░░░░░██░░░░░░
 ```
 
 ### DMS:
@@ -48,6 +56,13 @@ Hyperperiode:  30
 Prozessorauslastung:  0.8999999999999999
 ['A', 'C', 'B', 'A', 'D', 'C', 'A', 'B', 'D', 'A', 'C', 'D', 'A', 'B', 
 'D', 'A', 'C', 'i', 'A', 'B', 'C', 'A', 'D', 'D', 'A', 'C', 'B', 'A', 'i', 'i']
+DMS Scheduling: 100%|██████████| 30/30 [00:00<00:00, 142825.33it/s]
+
+Gant Chart:
+A |█░░█░░█░░█░░█░░█░░█░░█░░█░░█░░
+B |░░█░░░░█░░░░░█░░░░░█░░░░░░█░░░
+C |░█░░░█░░░░█░░░░░█░░░█░░░░█░░░░
+D |░░░░█░░░█░░█░░█░░░░░░░██░░░░░░
 ```
 
 ### Error Handling:

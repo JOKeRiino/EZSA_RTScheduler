@@ -3,6 +3,7 @@ from tqdm import tqdm
 from helpers import lcmofarray
 from helpers import getutil
 from helpers import sortbydeadline
+from formatOutput import format_output_as_gant
 
 
 def dms(filedata):
@@ -44,4 +45,4 @@ def dms(filedata):
         if len(dmsoutput) < (t + 1):
             dmsoutput.append("i")
     print(dmsoutput)
-    print(taskdata)
+    format_output_as_gant(dmsoutput, filedata)
