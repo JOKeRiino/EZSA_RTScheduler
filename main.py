@@ -80,7 +80,7 @@ def rms(filedata):
                     task[1] -= 1
                     break
                 else:
-                    raise Exception(task[0], " Cannot be scheduled, because comp time", task[1] ,"is longer than remaining period time", task[2])
+                    raise Exception(task[0], " Cannot be scheduled, because comp time", task[1] ,"is longer than remaining period time", task[2], "on tick ", t)
 
         # Make sure the periods are updated every tick
         for x in range(len(taskdata)):
@@ -120,7 +120,7 @@ def dms(filedata):
                     task[1] -= 1
                     break
                 else:
-                    raise Exception(task[0], " Cannot be scheduled, because comp time", task[1] ,"is longer than remaining deadline time", task[3])
+                    raise Exception(task[0], " Cannot be scheduled, because comp time", task[1] ,"is longer than remaining deadline time", task[3], "on tick ", t)
 
         # Make sure the periods are updated every tick
         for x in range(len(taskdata)):
@@ -137,9 +137,9 @@ def dms(filedata):
 if __name__ == '__main__':
     # file structure: Name, Comp Time (C), Period (T), Deadline (D)
     fileData4 = readfile("Assets/Tasks4.txt")
-    # rms(fileData4)
-    # dms(fileData4)
+    rms(fileData4)
+    dms(fileData4)
     fileData22 = readfile("Assets/Tasks22.txt")
-    rms(fileData22)
-    #dms(fileData22)
+    # rms(fileData22)
+    # dms(fileData22)
 
