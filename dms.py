@@ -4,6 +4,7 @@ from helpers import lcmofarray
 from helpers import getutil
 from helpers import sortbydeadline
 from formatOutput import format_output_as_gant
+from rta import rta
 
 
 def dms(filedata):
@@ -21,7 +22,12 @@ def dms(filedata):
         if not task[3]:
             task[3] = task[2]
     taskdata.sort(key=sortbydeadline)
+
     taskdataBackup = copy.deepcopy(taskdata)
+
+    # rta test
+    rta(taskdataBackup)
+
     # calculate the output for RMS here
     dmsoutput = []
     for t in tqdm(range(lcm), desc="DMS Scheduling", colour="#48dd40"):

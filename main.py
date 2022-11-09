@@ -7,6 +7,7 @@
 from filereader import readfile
 from rms import rms
 from dms import dms
+from optiprio import rta_opti_prio
 
 
 def rms_from_file(path):
@@ -26,5 +27,9 @@ if __name__ == '__main__':
     # rms_from_file("Assets/Tasks22.txt")
     # dms_from_file("Assets/Tasks22.txt")
 
-    #RTA
-     rms_from_file("Assets/TasksRTA.txt")
+    # RTA
+    # rms_from_file("Assets/TasksRTA.txt")
+
+    # optiPrio
+    print(rta_opti_prio(readfile("Assets/TasksOptiPrio.txt")))
+

@@ -24,3 +24,9 @@ def getutil(arr):
     for task in arr:
         u = u + (task[1] / task[2])
     return u
+
+
+# Swap two indexes in an array
+def swappositions(arr, pos1, pos2):
+    arr[pos1], arr[pos2] = arr[pos2], arr[pos1]
+    return arr
