@@ -14,6 +14,6 @@ def format_output_as_gant(outputdata, filedata):
             else:
                 gant_string.append("░")
 
-        print(f'{task[0]:^{maxlen}} |{"".join(gant_string)[0:200]}')
+        print(f'{task[0]:^{maxlen}} |{"".join(gant_string)[0:150]}')
 
     return True
