@@ -13,11 +13,12 @@ def rta_opti_prio(filearray):
         for nxt in range(K, len(filearray)):
 
             res_array = swappositions(res_array, K, nxt)
-            res_rta = rta(res_array)[K] <= filearray[K][2]
+            res = res_array[::-1]
+            res_rta = rta(res)[filearray[K][0]]
 
-            if res_rta:
+            if res_rta != -1:
                 break
-        if not res_rta:
+        if res_rta == -1:
             break
 
     return res_array
