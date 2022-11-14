@@ -3,7 +3,7 @@
 import math
 
 
-def rta(sortedarray):
+def rta_opti_prio(sortedarray):
     # Calculate response time for each task from sortedarray
     # file structure: Name, Comp Time (C), Period (T), Deadline (D)
     # R_1 -> C_b + ∑( ⌈ R_0 / T_a ⌉ * C_a )
@@ -17,7 +17,7 @@ def rta(sortedarray):
 
             # res_times.append(str(task[0]) + ": " + str(task[1]))
             res_times.append(task[1])
-            resdict [task[0]]=task[1]
+            resdict[task[0]] = task[1]
         else:
             r_0 = task[1]
             r = 0
@@ -35,15 +35,14 @@ def rta(sortedarray):
                 r = -1
             # res_times.append(str(task[0]) + ": " + str(r))
             res_times.append(r)
-            resdict[task[0]]=r
+            resdict[task[0]] = r
 
         index += 1
 
-    # print("\n RTA: ", res_times)
     outputstring = ""
     for x in range(len(sortedarray)):
         outputstring += sortedarray[x][0] + ": " + str(res_times[x]) + ", "
-    print(outputstring)
+    print("rtaOptiPrio: " + outputstring)
 
     print(resdict)
 

@@ -6,8 +6,9 @@ from helpers import getutil
 from helpers import sortbyperiod
 from formatOutput import format_output_as_gant
 from rta import rta
+from rtaOptiPrio import rta_opti_prio
 
-def rms(filedata):
+def rms(filedata, opti_prio):
     print("\nRMS:")
     print(filedata)
     # rms algorithm
@@ -26,11 +27,19 @@ def rms(filedata):
     for task in taskdata:
         if not task[3]:
             task[3] = task[2]
-    taskdata.sort(key=sortbyperiod)
+
+    # Sorting
+    if opti_prio:
+        # Algo should receive a sorted array according to rta_opti_prio but receives DICT!!!!
+        res_dict = rta_opti_prio(taskdata)
+        print(res_dict)
+    else:
+        taskdata.sort(key=sortbyperiod)
+
     taskdataBackup = copy.deepcopy(taskdata)
 
-    # rta test
-    rta(taskdataBackup)
+    # rta test ONLY RMS
+    # rta(taskdataBackup)
 
     # calculate the output for RMS here
     rmsoutput = []
