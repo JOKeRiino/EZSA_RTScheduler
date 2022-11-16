@@ -18,6 +18,11 @@ def edf_dens_test(filedata):
         sum += (task[1] / task[3])
     return sum
 
+def findTaskdata(taskbackup, taskname):
+    for task in taskbackup:
+        if task[0] == taskname:
+            return task
+
 
 def edf(filedata):
     print("\nEDF:")
@@ -57,9 +62,11 @@ def edf(filedata):
         # Make sure the periods are updated every tick
         for x in range(len(taskdata)):
             taskdata[x][2] -= 1
+            taskdata[x][3] -= 1
             if taskdata[x][2] == 0:
                 # If period is 0 recopy code from filedata
-                taskdata[x] = copy.deepcopy(taskdataBackup[x])
+                # taskdata[x] = copy.deepcopy(taskdataBackup[x])
+                taskdata[x] = copy.deepcopy(findTaskdata(taskdataBackup, taskdata[x][0]))
         if len(edfoutput) < (t + 1):
             edfoutput.append("i")
 

@@ -10,9 +10,9 @@ from dms import dms
 from edf import edf
 
 
-def rms_from_file(path, opti_prio):
+def rms_from_file(path, optiPrio):
     filedata = readfile(path)
-    rms(filedata, opti_prio)
+    rms(filedata, optiPrio)
 
 
 def dms_from_file(path):
@@ -27,7 +27,8 @@ def edf_from_file(path):
 
 if __name__ == '__main__':
     # file structure: Name, Comp Time (C), Period (T), Deadline (D)
-    # rms_from_file("Assets/Tasks4.txt", opti_prio=True)
+    # rms_from_file("Assets/Tasks4.txt", optiPrio=True)
+    # rms_from_file("Assets/TasksOptiPrio.txt", optiPrio=True)
     # dms_from_file("Assets/Tasks4.txt")
     # rms_from_file("Assets/Tasks22.txt")
     # dms_from_file("Assets/Tasks22.txt")
@@ -38,5 +39,5 @@ if __name__ == '__main__':
     # rms_from_file("Assets/TasksRTA.txt")
 
     # optiPrio
-    # print(rta_opti_prio(readfile("Assets/TasksOptiPrio.txt")))
+    # print(opti_prio(readfile("Assets/TasksOptiPrio.txt")))
 

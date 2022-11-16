@@ -6,11 +6,11 @@ from helpers import getutil
 from helpers import sortbyperiod
 from formatOutput import format_output_as_gant
 from rta import rta
-from rtaOptiPrio import rta_opti_prio
+from optiprio import opti_prio
 
-def rms(filedata, opti_prio):
+def rms(filedata, optiPrio):
     print("\nRMS:")
-    print(filedata)
+    print("Ausgangsreihenfolge: " + str(filedata))
     # rms algorithm
     lcm = lcmofarray(filedata)
     print("Hyperperiode: ", lcm)
@@ -29,13 +29,14 @@ def rms(filedata, opti_prio):
             task[3] = task[2]
 
     # Sorting
-    if opti_prio:
-        # Algo should receive a sorted array according to rta_opti_prio but receives DICT!!!!
-        res_dict = rta_opti_prio(taskdata)
-        print(res_dict)
+    if optiPrio:
+        # tasks sorted with optiPrio
+        taskdata = opti_prio(taskdata)
     else:
+        # tasks sorted by period
         taskdata.sort(key=sortbyperiod)
 
+    print("Sortiert: " + str(taskdata))
     taskdataBackup = copy.deepcopy(taskdata)
 
     # rta test ONLY RMS

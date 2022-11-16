@@ -4,7 +4,7 @@ from helpers import swappositions
 from rta import rta
 
 
-def rta_opti_prio(filearray):
+def opti_prio(filearray):
 
     res_array = copy.deepcopy(filearray)
     res_rta = True
